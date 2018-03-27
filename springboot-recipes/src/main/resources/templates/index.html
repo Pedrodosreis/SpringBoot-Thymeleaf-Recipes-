@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<title>Insert title here</title>
+</head>
+<body class="container">
+
+	<h1 class="bottom-30">Site de Receitas</h1>
+
+	<table class="table bottom-30">
+		<tr>
+			<th>Nome da Receita</th>
+			<th>Tempo de Preparo</th>
+			<th>Enviado por</th>
+		</tr>
+
+		<tr>
+			<td>Bolo de Laranja</td>
+			<td>...</td>
+			<td>Pedro dos Reis</td>
+		</tr>
+
+
+		<tr>
+			<td>Bolo de Chocolate</td>
+			<td>...</td>
+			<td>Juliana Amaral</td>
+		</tr>
+	</table>
+
+	<form action="#" th:action="@{/createRecipe}" th:object="${recipe}" method="post">
+		<div>
+			<label for="name">Nome da Receita</label> <input id="name" type="text"
+				class="form-control" th:field="*{name}" placeholder="Nome da Receita" />
+		</div>
+
+		<div>
+			<label for="time">Tempo de Preparo</label> <input id="timeRecipe" th:field="*{timeRecipe}" type="text"
+				class="form-control" placeholder="Tempo de Preparo" />
+		</div>
+
+		<div>
+			<label for="recipe">Receita</label> <textarea id="recipe" th:field="*{recipe}"
+				class="form-control" rows="7" placeholder="Receita ..." ></textarea>
+		</div>
+
+		<div class="bottom-30">
+			<label for="createdBy">Criado por</label> <input id="createdBy" type="text" th:field="*{createdBy}"
+				class="form-control" placeholder="Criado por" />
+		</div>
+
+		<input type="submit" value="Cadastrar Receita" class="btn btn-primary" />
+		<button type="reset" class="btn btn-danger">Limpar Formulário</button>
+	</form>
+
+</body>
+</html>
