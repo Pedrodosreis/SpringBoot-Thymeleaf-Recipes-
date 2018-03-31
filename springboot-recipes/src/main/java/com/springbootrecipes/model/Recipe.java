@@ -1,4 +1,4 @@
-package com.springbootrecipes.controllers;
+package com.springbootrecipes.model;
 
 public class Recipe {
 	
